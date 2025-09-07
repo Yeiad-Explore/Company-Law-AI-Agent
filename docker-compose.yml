@@ -1,0 +1,25 @@
+version: "3.8"
+
+services:
+  law-agent:
+    build: .
+    ports:
+      - "8000:8000" # FastAPI backend
+      - "8501:8501" # Streamlit frontend
+    volumes:
+      - ./company_documents:/app/company_documents
+      - ./pdfs:/app/pdfs
+      - ./.env:/app/.env
+    environment:
+      - PYTHONUNBUFFERED=1
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+networks:
+  default:
+    name: law-agent-network
