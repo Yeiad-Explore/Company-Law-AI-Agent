@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { ButtonColorful } from "@/components/ui/button-colorful";
 import { AnimatedGroup } from "@/components/ui/animated-group";
 import { Check, X } from "lucide-react";
 import Link from "next/link";
@@ -7,7 +8,7 @@ export default function PricingPage() {
   const plans = [
     {
       name: "Starter",
-      price: "$29",
+      price: "৳2,500",
       period: "/month",
       description:
         "Perfect for small businesses and startups getting started with legal compliance",
@@ -28,7 +29,7 @@ export default function PricingPage() {
     },
     {
       name: "Professional",
-      price: "$99",
+      price: "৳8,500",
       period: "/month",
       description:
         "Ideal for growing businesses that need advanced legal AI capabilities",
@@ -48,8 +49,8 @@ export default function PricingPage() {
     },
     {
       name: "Enterprise",
-      price: "Custom",
-      period: "",
+      price: "৳25,000",
+      period: "/month",
       description:
         "Tailored solutions for large organizations with complex compliance needs",
       features: [
@@ -223,12 +224,8 @@ export default function PricingPage() {
             legal compliance needs
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button asChild size="lg">
-              <Link href="/dashboard">Start Free Trial</Link>
-            </Button>
-            <Button asChild variant="outline" size="lg">
-              <Link href="/contact">Contact Sales</Link>
-            </Button>
+            <ButtonColorful label="Start Free Trial" />
+            <ButtonColorful label="Contact Sales" />
           </div>
         </div>
       </div>

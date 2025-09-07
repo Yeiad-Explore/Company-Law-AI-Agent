@@ -1,4 +1,6 @@
 import { Button } from "@/components/ui/button";
+import { ButtonColorful } from "@/components/ui/button-colorful";
+import { GradientCard } from "@/components/ui/gradient-card";
 import { AnimatedGroup } from "@/components/ui/animated-group";
 import {
   Rocket,
@@ -9,6 +11,8 @@ import {
   FileText,
   BarChart3,
   Clock,
+  Search,
+  Zap,
 } from "lucide-react";
 import Link from "next/link";
 
@@ -200,6 +204,45 @@ export default function SolutionsPage() {
         </AnimatedGroup>
       </div>
 
+      {/* AI-Powered Features Section */}
+      <div className="bg-gradient-to-r from-blue-50 to-purple-50 dark:from-blue-950/20 dark:to-purple-950/20 py-20">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl font-bold mb-4">AI-Powered Features</h2>
+            <p className="text-lg text-muted-foreground">
+              Discover our cutting-edge AI capabilities that make legal work
+              faster and more accurate
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+            <GradientCard
+              title="Intelligent Document Analysis"
+              description="AI-powered analysis of legal documents with instant insights, risk assessment, and actionable recommendations."
+              icon={<FileText className="w-5 h-5 text-white" />}
+              linkText="Learn More"
+              href="#document-analysis"
+            />
+
+            <GradientCard
+              title="Advanced Legal Research"
+              description="Comprehensive legal research powered by AI with real-time updates, case law analysis, and citation tracking."
+              icon={<Search className="w-5 h-5 text-white" />}
+              linkText="Explore Research"
+              href="#legal-research"
+            />
+
+            <GradientCard
+              title="Lightning Fast Results"
+              description="Get instant answers to complex legal questions in seconds, not hours. Our AI processes information at unprecedented speed."
+              icon={<Zap className="w-5 h-5 text-white" />}
+              linkText="See Speed"
+              href="#performance"
+            />
+          </div>
+        </div>
+      </div>
+
       {/* CTA Section */}
       <div className="bg-muted/50 py-20">
         <div className="max-w-4xl mx-auto px-6 text-center">
@@ -211,12 +254,8 @@ export default function SolutionsPage() {
             needs
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button asChild size="lg">
-              <Link href="/contact">Contact Sales</Link>
-            </Button>
-            <Button asChild variant="outline" size="lg">
-              <Link href="/demo">Schedule Demo</Link>
-            </Button>
+            <ButtonColorful label="Contact Sales" />
+            <ButtonColorful label="Schedule Demo" />
           </div>
         </div>
       </div>
